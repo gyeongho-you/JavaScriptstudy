@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //c05 / c05-01.html
+        // 함수
+        // 함수의 기본 형태
+        // 익명 함수
+        // 기본 형태
+        // function(){}
+
+        const func = function(){
+            console.log("1");
+            console.log("2");
+            console.log("3");
+        }
+
+        func()
+        func()
+        func()
+
+        console.log(typeof func);
+        console.log(func);
+
+        function namedFunc(){
+            console.log("1");
+            console.log("2");
+            console.log("3");
+        }
+        namedFunc()
+        namedFunc()
+
+        console.log(typeof namedFunc);
+        console.log(namedFunc);
+        
+
+        function f (x){
+            return x*x;
+        }
+
+        console.log(f(3));
+    
+        const printAll = function (param, a, a) {
+            console.log(param);
+        }
+
+        printAll(42,42)
+        printAll("foo")
+        printAll([1,2,3])
+        printAll(true)
+
+        // 나머지 매개변수
+        
+        function sample(...item){
+            console.log(item);
+            
+        }
+
+        sample(1,2,3,4,5)
+        sample(1,2,3)
+        sample(1,"d",123)
+    
+        function min(...items) {
+            let output = items[0]
+            for(const item of items){
+                if(output > item){
+                    output = item
+                }
+            }
+            return output
+        }
+
+        console.log(min(1,2,3,4,657,689,3));
+        
+
+        //나머지 매개변수와 일반 매개변수 조합하기
+        function anyTypeMin(first,...rests){
+            let output;
+            let items;
+            // 매개변수의 자료형에 따라 조건분기 하기
+            if(Array.isArray(first)){
+                output = first[0];
+                items = first;
+            }else if(typeof(first) === "number"){
+                output = first;
+                items = rests;
+            }
+            for(const item of items){
+                if(output>item){
+                    output = item;
+                }
+            }
+            return output;
+        }
+
+        console.log(anyTypeMin(1,123,454,3,24,6));
+        
+        function simplePrint(...items){
+            console.log(items);
+        }
+
+        const sampleArr = [1,2,3,4]
+        // 전개 연산자를 사용하지 않은 경우
+        simplePrint(sampleArr)
+        simplePrint(...sampleArr)
+    
+        let a = [1,2,3]
+        let b = a;
+        b[0] = 42
+        console.log(a);
+        
+
+        //불변성
+        let c = 1
+        let d = c
+        d = 42
+        console.log(c);
+        
+        const or = ["아주","중요한","자료"]
+        const useDate = or;
+        useDate[1]= "안중요한"
+        console.log(or);
+
+        const deepCopydata = [...or]
+        deepCopydata[1] = "안중요한12"
+        console.log(or);
+        
+        function name(params=10,a) {
+            console.log(params , a);
+            
+        }
+
+        console.log(name(5));
+
+
+        function earnings(name,wage=9860,hours=9){
+            console.log(`# ${name}님의 급여 정보`);
+            console.log(`- 시급: ${wage}원`);
+            console.log(`- 근무시간 : ${hours}시간`);
+            console.log(`- 급여: ${wage*hours}시간`);
+        }
+        console.log("# 월수금 알바");
+        earnings("학생1",9860,9)
+        console.log("# 화목토 알바");
+        earnings("학생1",9860,9)
+
+        earnings("학생1")
+
+        earnings("학생1",9900)
+        earnings("학생1",9900,10)
+
+    </script>
+</body>
+</html>

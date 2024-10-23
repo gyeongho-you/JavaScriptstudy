@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //입력 받기
+        // const input1 = prompt("구매 시간을 입력해 주세요 ( 0 ~ 24 )");
+        // const inputs1 = input1
+
+        // const timeAfter = Number(inputs1);
+
+        // const input2 = prompt("구매할 티켓 갯수를 입력해 주세요");
+        // const inputs2 = input2
+        // const ticketBuy = Number(inputs2);
+
+        // const input3 = prompt("결제하실 카드를 입력해 주세요 ( OO카드 )");
+        // const inputs3 = input3
+        // const card = inputs3;
+
+        // // 1번 문제
+        // if (ticketBuy <= 1 && timeAfter >= 15) {
+        //     console.log("티켓 구매 가능");
+        // } else {
+        //     console.log("티켓 구매 불가(1장을 구매하시는 분은 3시 이후에 가능합니다.)");
+        // }
+
+        // // 2번 문제
+        // if (card === "신한카드" || card === "우리카드") {
+        //     console.log("10% DC");
+        // } else {
+        //     console.log("할인되지 않음");
+        // }
+
+
+        // // 입력 받기
+        // const input4 = prompt("헬스장 회원이십니까? ( 맞으면 true , 틀리면 false를 입력해 주세요)");
+        // const inputs4 = input4;
+
+        // const gymMember = Boolean(input4)
+
+        // const input5 = prompt("헬스장 라커를 사용 하십니까? ( 맞으면 true , 틀리면 false를 입력해 주세요)");
+        // const inputs5 = input5;
+
+        // const lockerCheck = Boolean(input5)
+
+        // const input6 = prompt("물건값을 계산할 방법을 입력해 주세요 ( 카드, 현금, 계좌이체 )");
+        // const inputs6 = input6;
+
+        // const buyChoice = input6
+
+        // // 3번 문제
+        // if (gymMember && lockerCheck) {
+        //     console.log("라커 사용 가능");
+        // } else {
+        //     console.log("라커 사용 불가능");
+        // }
+
+        // // 4번 문제
+        // if (buyChoice === "현금" || buyChoice === "계좌이체") {
+        //     console.log("계산이 완료되었습니다.");
+        // } else {
+        //     console.log("지원하지 않는 결제수단입니다.");
+        // }
+
+
+
+        // 1번 문제 ( && 연산자 )
+        timeAfter = 15
+        ticketBuy = 1
+        if(ticketBuy <= 1 && timeAfter >= 15){
+            console.log("티켓 구매 가능")
+        }else{
+            console.log("티켓이나 시간이 맞지 않음")
+        }   
+
+        // 2번 문제 ( || 연산자 )
+        card = "국민카드"
+        if(card == "신한카드" || card == "우리카드"){
+            console.log("10% DC")
+        }else{
+            console.log("할인되지 않음")
+        }
+
+        // 3번 문제 ( && 연산자 )
+        gymMember = true;
+        locker = true;
+        if (gymMember && lockerCheck) {
+            console.log("라커 사용 가능");
+        } else {
+            console.log("라커 사용 불가능");
+        }
+
+        // 4번 문제 ( || 연산자 )
+        buyChoice = "카드"
+        if (buyChoice === "현금" || buyChoice === "계좌이체") {
+            console.log("계산이 완료되었습니다.");
+        } else {
+            console.log("지원하지 않는 결제수단입니다.");
+        }
+
+    </script>
+</body>
+</html>

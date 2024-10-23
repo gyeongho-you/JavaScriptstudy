@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1번 문제
+        // 1번 const
+
+        // 2번 문제
+        // 2번 =
+
+        // 3번 문제
+        // 1번
+        // const r // 상수를 선언할 때에는 값을 바로 삽입해야됨
+        // r = 10
+        const r = 10
+
+        console.log(`넓이 = ${3.14 * r * r}`);
+        console.log(`둘레 = ${2 * 3.14 * r}`);
+
+
+        // 4번 문제
+        let number =10
+
+        console.log(++number);
+        console.log(number++);
+        console.log(++number);
+        console.log(number--);
+        
+        // 11, 11, 13, 13 순으로 출력
+        // 앞에는 먼저 계산, 뒤는 해당 함수가 끝나고 계산
+
+
+        // 5번 문제
+        // 3번 confirm // 예 아니오를 통해 true , false값을 입력받음
+        
+
+        // 6번 문제
+        // String() - 문자열 자료형으로 변환합니다.
+        // Boolean() - 불 자료형으로 변환합니다.
+
+
+        // 7번 문제
+        const inputCm = prompt("cm 단위의 숫자를 입력해주세요.")
+
+        const cm = Number(inputCm)
+        const inch = cm * 0.393701
+
+        console.log(cm + "cm는 " + inch.toFixed(6) + "inch 입니다.");
+
+
+
+        // 8번 문제
+        const inputRadius = prompt("원의 반지름을 입력해 주세요")
+
+        const radius = Number(inputRadius)
+
+        console.log("원의 반지름: " + radius);
+        console.log("원의 넓이: " + (radius*radius*3.14));
+        console.log("원의 둘레: " + (2*radius*3.14));
+
+
+
+        // 9번 문제
+        const inputUSD = prompt("달러 단위의 금액을 입력해주세요.")
+        const usd = Number(inputUSD)
+
+        console.log("달러: " + usd);
+        
+        const krw =  usd*1207
+        console.log("→ 원화: " + krw);
+
+        
+        // 10-1번 문제
+        const inputOld = prompt("당신의 나이를 입력해 주세요(년생 구하기)")
+        const old = Number(inputOld)
+        
+        console.log("당신은 " + (2025-old) + "년 생입니다.");
+
+
+        // 10-2번 문제
+        const inputWhen = prompt("당신이 태어난 년도를 적어주세요")
+        const when = Number(inputWhen)
+        const zodiacSign = ["쥐띠","소띠","호랑이띠","토끼띠","용띠","뱀띠","말띠","양띠","원숭이띠","닭띠","개띠","돼지띠"]
+        
+        console.log("당신은 " + zodiacSign[(when-4)%12] + " 입니다.");
+        
+        // 10-3번 문제
+        const inputTriangleBase = prompt("삼각형의 밑변을 적어주세요")
+        const triangleBase = Number(inputTriangleBase)
+        const inputTriangleHigh = prompt("삼각형의 높이를 적어주세요")
+        const triangleHigh = Number(inputTriangleHigh)
+        
+        console.log("삼각형의 넓이는 " + (triangleBase * triangleHigh / 2) + " 입니다.");
+
+    </script>
+</body>
+</html>

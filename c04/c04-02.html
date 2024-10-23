@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //04-02.html
+        //반복문   
+        //for in 반복문
+
+        const todos=["우유","메일","필라테스"]
+        for(const i in todos){
+            console.log(i);
+        }
+
+        for(const i of todos){
+            console.log(i);
+        }
+
+        let output = 0;
+        for(let i=1; i<=100; i++){
+            output += i;
+        }
+
+        for(let i=0; i<todos.length; i++){
+            console.log(`${i}번 째 할 일:${todos[i]}`)
+        }
+
+        let i=0;
+        while(i<10){
+            console.log(`${i}번째 반복입니다.`);
+            i++
+        }
+
+        let j = 0;
+        while(confirm("계속 진행하시겠습니까?")){
+            console.log(`${j}번째 반복입니다.`);
+            j++;
+        }
+
+        let n = 0;
+        const array = [1,2,3,4,5]
+        while(n<array.length){
+            console.log(`${n}:${array[n]}`);
+            n++;
+        }
+
+        for(let i=0; true; i++){
+            console.log(`${i}번째 반복문입니다.`);
+            const isContinue = confirm("계속 하시겠습니까?");
+            if(!isContinue){
+                break;
+            }   
+        }
+
+        let result = 0;
+        for(let i=1 ; i<=10; i++){
+            if(i%2 === 1){
+                //홀수면 현재 반복 중단, 다음 반복
+                continue;
+            }
+            result += i;
+        }
+    </script>
+</body>
+</html>

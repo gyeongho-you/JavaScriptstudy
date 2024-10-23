@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1"></h1>
+    <script>
+        //c05-02-01.html
+        //타이머 함수
+        let h1 = document.querySelector("#h1")
+        setTimeout(()=>{
+            h1.innerHTML = "Hello World"
+        },1*2000)
+        
+        setTimeout(()=>{
+            console.log("1초 후에 실행됩니다.")
+        },1*1000)
+        let count = 0
+
+        const id = setInterval(()=>{
+            console.log(`1초마다 실행됩니다(${count}번째)`)
+        },1*1000)
+
+        setInterval(()=>{
+            console.log(`종료`)
+            clearInterval(id)
+        },5*1000)
+
+
+
+    </script>
+</body>
+</html>

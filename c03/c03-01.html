@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //c03 / c03-01.html
+        //조건문
+        //if 조건문
+        if(273 < 100){
+            console.log("273<100 => true");
+        }
+
+        //현재 시각 구하기
+        const date = new Date()
+        // 현재 연도 구하기
+        console.log(date.getFullYear());
+        // 현재 달 구하기
+        console.log(date.getMonth());
+        //현재 날 구하기
+        console.log(date.getDay());
+        //현재 시 구하기
+        console.log(date.getHours());
+        //현재 분 구하기
+        console.log(date.getMinutes());
+        //현재 초 구하기
+        console.log(date.getSeconds());
+        console.log("".length);
+
+        // 오전과 오후 구분하기
+        const hour = date.getHours();
+        console.log(hour);
+        if(hour < 12){
+            console.log("오전");
+        }
+        
+        if(hour >= 12){
+            console.log("오후");
+        }
+        
+        
+        if(hour < 12){
+            console.log("오전");
+        }else{
+            console.log("오후");
+        }
+        
+        if(hour < 11){
+            console.log("아침 먹을 시간");   
+        }else{
+            if(hour < 15){
+                console.log("점심 먹을 시간");   
+            }else{
+                console.log("저녁 먹을 시간");   
+            }
+        }
+        
+        if(hour < 11){
+            console.log("아침");
+        }else if(hour < 15){
+            console.log("점심");
+        }else{
+            console.log("저녁");
+        }
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수 응용
+        //콜백 함수
+
+        function callThreeTimes(callback){
+            for(let i=0; i<3; i++){
+                callback(i)
+            }
+        }
+        function print(i){
+            console.log(`${i}번째 함수 호출`);
+        }
+        callThreeTimes(print);
+
+        callThreeTimes(function (i){
+            console.log(`${i}번째 함수 호출`);            
+        })
+
+        //콜백 함수 활용 함수 : forEach()
+
+        let numbers = [273,52,13,32,57]
+        //forEach(callback){}
+
+        numbers.forEach(function(value,index,array) {
+            console.log(`배열 : ${array}`);
+            console.log(`${index}번째 요소 : ${value}`)
+        })
+
+        let newNumbers = []
+        for(let i in numbers){
+            newNumbers[i] = numbers[i]*numbers[i]
+        }
+
+        console.log(newNumbers);
+
+
+        numbers = numbers.map(function(v){
+            return v*v;
+        })
+
+        numbers.forEach(console.log)
+
+        numbers = [0,1,2,3,4,5]
+        const evenNumbers = numbers.filter(function(v){
+            return v%2===0
+        })
+        console.log(`원래 배열: ${numbers}`);
+        console.log(`짝수만 추출:${evenNumbers}`);
+        
+        const array=[0,1,2,3,4,5]
+        array.map(function(v){return v*v})
+        array.map(v => v*v)
+
+        numbers = [0,1,2,3,4,5,6,7,8,9]
+        // 위 배열을 짝수만 골라 내고 , 짝수만 제곱하고 콘솔에 출력하세요
+        numbers.filter(v=>v%2===0)
+            .map(v=>v*v)
+            .forEach(console.log)
+         
+    </script>
+</body>
+</html>

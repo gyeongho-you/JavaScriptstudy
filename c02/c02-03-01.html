@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // c02-03-01.html
+        // 자료형 변환
+
+        // 문자열 입력
+        // BOM 메서드 - prompt(메시지 문자열, 기본 입력 문자열)
+        const input = prompt("message","_default")
+        console.log(input);
+
+        // 불(논리) 입력
+        // confirm(메시지 문자열)
+        // 사용자에게 확인을 요구하는 메시지 창이 나타납니다.
+        // 사용자가 [확인]버튼을 클릭하면 true를 리턴하고, [취소]버튼을 클릭하면 false를 리턴합니다.
+        const input1 = confirm("수락하시겠습니까?")
+        console.log(input1);
+
+        // 숫자 자료형으로 변환하기
+        // 다른 자료형을 숫자 자료형으로 변환할 때는 Number()함수를 사용합니다.
+        // Number(자료)
+        // 숫자가 적혀 있는 문자열을 숫자로 변환됩니다.
+        let n1 = Number("273")
+        console.log(typeof n1);
+
+        // 다른 문자가 들어 있어서 숫자로 변환할 수 없는 문자열의 경우
+        // NaN(Not a Number)라는 값을 출력합니다.
+        // NaN은 자바스크립트에서 숫자이지만, 숫자로 나타낼 수 없는 숫자를 뜻합니다.
+        // 즉, Number()함수를 사용해서 변환 했으므로 자바스크립트에서 자료형은 숫자이지만, 실질적으로 숫자로 변환할 수 없으므로 숫자가 아니다
+        console.log(Number("$273"));
+        console.log(typeof Number("$273"));
+
+        // 논리 타입을 숫자로 변환할 수 있음
+        // true - 1, false - 0 으로 변환됩니다.
+        console.log("true 변환", Number(true));
+        console.log("false 변환",Number(false));
+
+        // 숫자 연산자를 사용해 자료형 변환하기
+        // +연산자를 제외( 문자열끼리 합치는 연결 연산자가 더 우선적 )한 나머지에 대해 ( -, *, / ) 해당 연산자를 사용하면 다른 자료형을 숫자 자료형으로 변환할 수 있습니다.
+        // 문자열이 포함되어 있지 않다면 + 도 가능
+        console.log(typeof("52"-2));
+        
+        let b2 = true+3
+        console.log(b2);
+        console.log(typeof b2);
+        
+        // 문자열 자료형으로 변환하기
+        // 다른 자료형을 문자열 자료형으로 변환할 때는 String()함수를 사용합니다
+        // String(자료)
+        console.log(String(52.273));
+        console.log(String(true));
+        console.log(String(false));
+
+        // 문자열 연산자를 사용해 자료형 변환하기
+        // 연결 연산자(+)를 사용하면 문자열이 아닌 다른 자료형에 빈 문자열을 연결하면 문자열 자료형으로 변환합니다.
+        console.log(273+"");
+        console.log(true+"");
+        let n2 = 42
+        console.log("n2의 값 : "+n2);
+
+        // 논리 자료형으로 변환하기
+        // 다른 자료형을 논리 자료형으로 변환할 때는 Boolean()함수를 사용합니다.
+        // Boolean(자료)
+        // 대부분의 자료는 논리 자료형으로 변환했을 때 true로 변환이 됩니다.
+        // false로 변환이 되는경우
+        // 1. 0(숫자) ( 문자는 true )
+        // 2. NuN
+        // 3. "" (빈 문자열)
+        // 4. null
+        // 5.undefined
+        console.log(Boolean(0));
+        console.log(Boolean(NaN));
+        console.log(Boolean(""));
+        console.log(Boolean(null));
+        console.log(Boolean(undefined));
+
+        // 논리 부정 연산자를 사용해 자료형 변환하기
+        // Boolean()함수를 사용하지 않고 논리 부정 연산자(!)를 사용해 다른 자료형을 논리 자료형으로 변환할 수 있습니다.
+        // 논리 자료형이 아닌 다른 자료에 논리 부정 연산자를 2번 사용하면 논리 자료형으로 변환합니다.
+        console.log(!!273);
+        
+        
+        
+
+    </script>
+</body>
+</html>

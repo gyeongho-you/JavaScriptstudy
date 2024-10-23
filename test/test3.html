@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1번 문제
+        // 답 - 3번 / if문의 조건은 4 이상인데 4 이상의 x값은 3번 밖에 없음
+
+
+        //2번 문제
+        const a2 = Number(prompt('첫 번째 숫자(두 수 비교)',''))
+        const b2 = Number(prompt('두 번째 숫자(두 수 비교)',''))
+
+        if(a2>b2){
+            alert('첫 번째로 입력한 숫자가 더 큽니다.')
+        }else if(a2 === b2){
+            alert('두 숫자가 같습니다.')
+        }else{
+            alert('두 번째로 입력한 숫자가 더 큽니다.')
+        }
+
+
+        //3번 문제
+        const x = 5
+        // if (x > 10){
+        //     if( x < 20){
+        //         console.log('조건에 맞습니다.');
+        //     }
+        // }
+        if( x > 10 && x < 20){
+            console.log('조건에 맞습니다.');
+        }
+
+
+        //4번 문제
+        const a4 = Number(prompt('숫자를 입력해주세요.(음수, 0 , 양수 구분)',''))
+        switch(a4){
+            case a4 < 0:
+                console.log('음수 입니다.');
+                break
+            case a4 === 0:
+                console.log('0 입니다.');
+                break
+            case a4 > 0:
+                console.log('양수 입니다.');
+                break
+            default:
+                console.log('숫자가 아닙니다.');
+        }
+
+
+
+        //5번 문제
+        const a5 = Number(prompt('숫자를 입력해주세요.(홀수, 짝수 구분)',''))
+        switch(a5%2){
+            case 0:
+                console.log('짝수 입니다.');
+                break
+            case 1:
+                console.log('홀수 입니다.');
+                break
+            default:
+                console.log('숫자가 아닙니다.');
+        }
+        
+
+
+        //6번 문제
+        const a6 = Number(prompt('월을 입력해주세요.',''))
+        if(a6 <= 12 && a6 >= 1){
+            if (a6 >= 11 && a6 <= 2){
+                console.log('겨울입니다.');
+            }else if(a6 >= 9){
+                console.log('가을입니다.');
+            }else if(a6 >= 6){
+                console.log('여름입니다.');
+            }else if(ca6 >= 3){
+                console.log('봄입니다.');
+            }
+        }else{
+            console.log('유효한 달이 아닙니다.');
+        }
+
+
+        
+        //7번 문제 ( 따라 작성하기 )
+        // 7-1
+        const score = Number(prompt('학점을 입력해주세요.','학점'))
+        if (score === 4.5){
+            alert('신')
+        } else if( 4.2 <= score && score < 4.5) {
+            alert('교수님의 사랑')
+        } else if( 3.5 <= score && score < 4.2) {
+            alert('현 체제의 수호자')
+        } else if( 2.8 <= score && score < 3.5) {
+            alert('일반인')
+        } else if( 2.3 <= score && score < 2.8) {
+            alert('일탈을 꿈꾸는 소시민')
+        } else if( 1.75 <= score && score < 2.3) {
+            alert('오락문화의 선구자')
+        } else if( 1.0 <= score && score < 1.75) {
+            alert('불가촉천민')
+        } else if( 0.5 <= score && score < 1.0) {
+            alert('자벌레')
+        } else if( 0 < score && score < 0.5) {
+            alert('플랑크톤')
+        } else {
+            alert('시대를 앞서가는 혁명의 씨앗')
+        }
+
+        // 7-2
+        const score2 = Number(prompt('학점을 입력해주세요.','학점'))
+        if (score2 === 4.5){
+            alert('신')
+        } else if( 4.2 <= score2) {
+            alert('교수님의 사랑')
+        } else if( 3.5 <= score2) {
+            alert('현 체제의 수호자')
+        } else if( 2.8 <= score2) {
+            alert('일반인')
+        } else if( 2.3 <= score2) {
+            alert('일탈을 꿈꾸는 소시민')
+        } else if( 1.75 <= score2) {
+            alert('오락문화의 선구자')
+        } else if( 1.0 <= score2) {
+            alert('불가촉천민')
+        } else if( 0.5 <= score2) {
+            alert('자벌레')
+        } else if( 0 < score2) {
+            alert('플랑크톤')
+        } else {
+            alert('시대를 앞서가는 혁명의 씨앗')
+        }
+
+        //7-3
+        const rawInput = prompt('태어난 해를 입력해주세요','')
+        const year = Number(rawInput)
+        const e = year%12
+
+        let result
+        if(e === 0) {result = '원숭이'}
+        else if(e === 1) {result = '닭'}
+        else if(e === 2) {result = '개'}
+        else if(e === 3) {result = '돼지'}
+        else if(e === 4) {result = '쥐'}
+        else if(e === 5) {result = '소'}
+        else if(e === 6) {result = '호랑이'}
+        else if(e === 7) {result = '토끼'}
+        else if(e === 8) {result = '용'}
+        else if(e === 9) {result = '뱀'}
+        else if(e === 10) {result = '말'}
+        else if(e === 11) {result = '양'}
+        alert(`${year}년에 태어났다면 ${result} 띠입니다.`)
+
+        //7-4
+        const rawInput2 = prompt('태어난 해를 입력해 주세요','')
+        const year2 = Number(rawInput2)
+        const tti = '원숭이,닭,개,돼지,쥐,소,호랑이,토끼,용,뱀,말,양'.split(',')
+
+        alert(`${year2}년에 태어났다면 ${tti[year2%12]}띠 입니다.`)
+
+
+        //8번 문제
+        const result8 = (100 > 200) ? prompt('값을 입력해주세요','') : confirm('버튼을 클릭해주세요')
+        alert(result8)
+        // 100은 200보다 작으므로 거짓이다. 거짓은 :를 기준 오른쪽 것이 실행 되기 떄문에 confirm이 실행되고,
+        // 예 아니요 선택에 따라 true false를 반환하여 출력한다.
+
+
+
+        //9번 문제
+        const rawInput9 = prompt('태어난 해를 입력해주세요','')
+        const year9 = Number(rawInput9)
+        const e9 = year9%12
+
+        let result9
+        switch(e9){
+            case 0:
+                result9 = '원숭이'
+                break
+            case 1:
+                result9 = '닭'
+                break
+            case 2:
+                result9 = '개'
+                break
+            case 3:
+                result9 = '돼지'
+                break
+            case 4:
+                result9 = '쥐'
+                break
+            case 5:
+                result9 = '소'
+                break
+            case 6:
+                result9 = '호랑이'
+                break
+            case 7:
+                result9 = '토끼'
+                break
+            case 8:
+                result9 = '용'
+                break
+            case 9:
+                result9 = '뱀'
+                break
+            case 10:
+                result9 = '말'
+                break
+            case 11:
+                result9 = '양'
+                break
+        }
+        alert(`${year9}년에 태어났다면 ${result9} 띠입니다.`)
+
+
+
+        //10번 문제
+        const rawInput10 = prompt('태어난 해를 입력해주세요','')
+        const year10 = Number(rawInput10)
+
+        let 간
+        // gan10 = '갑,을,병,정,무,기,경,신,임,계'.split(',')
+        // 간 = tti10[year10%10]
+        switch((year10-4)%10){
+            case 0:
+                간 = '갑'
+                break
+            case 1:
+                간 = '을'
+                break
+            case 2:
+                간 = '병'
+                break
+            case 3:
+                간 = '정'
+                break
+            case 4:
+                간 = '무'
+                break
+            case 5:
+                간 = '기'
+                break
+            case 6:
+                간 = '경'
+                break
+            case 7:
+                간 = '신'
+                break
+            case 8:
+                간 = '임'   
+                break
+            case 9:
+                간 = '계'
+                break
+        }
+
+        let 띠
+        // tti10 = '자,축,인,묘,진,사,오,미,신,유,술,해'.split(',')
+        // 띠 = tti10[year10%12]
+        switch((year10-4)%12){
+            case 0:
+                띠 = '자'
+                break
+            case 1:
+                띠 = '축'
+                break
+            case 2:
+                띠 = '인'
+                break
+            case 3:
+                띠 = '묘'
+                break
+            case 4:
+                띠 = '진'
+                break
+            case 5:
+                띠 = '사'
+                break
+            case 6:
+                띠 = '오'
+                break
+            case 7:
+                띠 = '미'
+                break
+            case 8:
+                띠 = '신'   
+                break
+            case 9:
+                띠 = '유'
+                break
+            case 10:
+                띠 = '술'
+                break
+            case 11:
+                띠 = '해'
+                break
+        }
+        
+        alert(`${year10}년은 ${간}${띠} 년입니다.`)
+
+
+
+        //11번 문제
+        // 답 - 4번 else  /  else는 if문에서 사용하는 문법
+
+
+        //12번 문제
+        // 답 - 3번 / 출력문이 없음 ( 논리합 연산자는 왼쪽이 true면 오른쪽을 실행하지 않음 )
+        // 1,2번은 조건부 연산자로 true는 :기준 왼쪽, false는 오른쪽 출력 ( 둘 다 '출력A')
+        // 4번은 논리곱으로 왼쪽이 true면 오른쪽도 실행 ( 둘다 확인해야 되기 떄문 )
+
+    </script>
+</body>
+</html>
