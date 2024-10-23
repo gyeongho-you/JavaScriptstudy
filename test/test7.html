@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1번 문제
+        const book = {
+            name:"혼자 공부하는 파이썬",
+            price:18000,
+            pubilsher:"한빛미디어"
+        }
+
+
+        //2번 문제
+        //답 - 3번
+
+
+
+        //3번 문제
+        //답 - 1번
+
+
+        //4번 문제
+        const object = {
+            ko : "빵",
+            en : "bread",
+            ja : "パン",
+            fr : "pain",
+            es : "pan",
+            lang : {
+                ko : "한국어",
+                en : "영어",
+                ja : "일본어",
+                fr : "프랑스어",
+                es : "스페인어",
+            },
+            print : function (lang){  // 메서드
+                console.log(`${this.ko}은 ${this.lang[lang]}로 ${this[lang]}입니다.`);
+                
+            }
+        }
+        object.print("es")
+        //결과 - 빵은 스페인어로 pan입니다.
+
+
+
+        //5번 문제
+        const num = 52000
+        // num.원 = function (){
+        //     return this.valueOf() + '원'
+        // }
+        Number.prototype.원 = function (){
+            return this.valueOf() + '원'
+        }
+        console.log(num.원());
+        //결과 예측- undefiend / 기본 자료형은 prototype을 통해서만 속성과 메서드 추가가 가능
+        //결과 - 타입에러 - 함수를 찾지 못함. 이유는 위에와 같음
+        
+
+
+        //6번 문제
+        function printLang(code){
+            return printLang._lang[code]
+        }
+        printLang._lang = {
+            ko : "한국어",
+            en : "영어",
+            ja : "일본어",
+            fr : "프랑스어",
+            es : "스페인어",
+        }
+
+        console.log('printLang("ko"):',printLang('ko'));
+        console.log('printLang("en"):',printLang('en'));
+        //결과 예측 - printLang("ko"): 한국어
+        //           printLang("en"): 영어
+        
+
+
+        //7번 문제
+        const degree = 90
+
+        console.log(Math.sin(degree)); // 잘못 된 사용
+        console.log(Math.sin(Math.PI/2)); // 올바른 사용
+        //Math.sin()의 경우 인자값을 라디언값으로 받고 그에 맞는 sin값을 반환함
+        //라디언값의 경우 < 각도*Math.PI/180 > 이라는 공식을 통해 얻어야 함
+        //현재는 90도에 대한 라디언값이 필요하므로 90*Math.PI/180 = Math.PI/2
+        //인자값을 Math.PI/2로 하면 원하는 값을 얻을 수 있음
+
+
+
+        //8번 문제
+        //답 - 2번
+
+    </script>
+</body>
+</html>
