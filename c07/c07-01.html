@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //예외처리
+        //구문 오류와 예외
+        //오류의 종류
+        //크게 두가지
+        // - 프로그램 실행 전에 발생하는 오류
+        // - 프로그램 실행 중에 발생하는 오류
+
+        //일반
+        const h1 = document.querySelector("h1")
+        if(h1){
+            h1.testContent = "Hello"
+        }else{
+            console.log("h1 태그를 추출할 수 없습니다.");
+            
+        }
+
+        //고급
+
+        try{
+            const h2 = document.querySelector("h1")
+            h2.testContent = "Hello"
+        }catch(exception){
+            console.log("h2 태그를 추출할 수 없습니다.");
+        }finally{
+            console.log("기능을 종료합니다.");
+        }
+        
+        
+    </script>
+</body>
+</html>

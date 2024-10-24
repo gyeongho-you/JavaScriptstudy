@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Number 메서드, 속성
+        Number.MAX_VALUE // 자바스크립트에서 가장 큰 수
+        Number.MIN_VALUE // 자바스크립트에서 0에 가장 가까운 수 ( 더 작으면 0)
+        Number.POSITIVE_INFINITY // 양의 무한대
+        Number.NEGATIVE_INFINITY // 음의 무한대
+        Number.NaN // 숫자가 아님
+        Number.isSafeInteger(123) // 들어온 값이 안전한 정수인지 ( -(2^53-1) ~ (2^53-1) ) 사이의 모든 정수 -> true
+        let a = 123.456
+        a.toPrecision(2) // toFixed와 다르게 전체 자릿수를 지정 ( 그 뒤값은 반올림 )  2면  a가 123.456 -> 12
+        
+
+        //String 메서드
+        let b = "abc"
+        b.charAt(2) // 해당 index 문자 반환
+        b.lastIndexOf('e') // 마지막으로 발견된 인자값의 index를 반환
+        b.replace('a','b') // 'a' 를 'b' 로 반환
+        b.substring(2,4) // 두 인자값의 사이에 있는 문자열을 반환 (2,4) 는 1~4에 위치한 문자열 반환
+        b.toLowerCase() // 모든 문자 소문자로 변경 
+        b.toUpperCase() // 모든 문자 대문자로 변경 
+        b.repeat(2) // 인수로 전달된 만큼 문자열을 반복해 반환 (2면 2번 반복) 결과 -> "abcabc"
+        b.includes('b',1) // 문자열이 포함되어 있는지 검사 (boolean) 뒤에 정수값은 검사를 시작할 index
+        b.padStart(10,"ccc") // 문자열의 길이가 주어진 인수보다 짧으면 앞부분을 주어진 문자열로 채운다  결과 -> cccccccabc
+        b.padEnd(10,"ccc") // 문자열의 길이가 주어진 인수보다 짧으면 뒷부분을 주어진 문자열로 채운다  결과 -> abcccccccc
+
+
+        //Math 메서드
+        Math.abs(-1) // 인수의 절대값을 반환
+        Math.round(2.5) // 소숫점 이하 자리를 반올림
+        Math.ceil(2.4) // 소숫점 이하 자리를 올림
+        Math.floor(2.6) // 소숫점 이하 자리를 내림
+        Math.sqrt(9) // 제곱근 반환
+        Math.pow(2,6) // 첫번째 인수를 두번째 인수만큼 거듭제곱
+        Math.max(2,65,5,78) // 인수중에 가장 큰 수를 반환
+        Math.min(2,523,634,6,1) // 인수중에 가장 작은 수를 반환
+
+
+
+        //맛집 추천
+        const goodFoods ="동래구:가야밀면/해운대구:금수복국,메르씨엘,기장 손칼국수/부산진구:구워삶기/중구:부산족발,한월식당/영도구:신기산업"
+        const foodList = goodFoods.split("/")
+        const area = prompt("당신의 지역을 입력해 주세요(부산지역) ex)동래구, 해운대구 등..")
+        let index = -1;
+        for(let i=0; i<foodList.length; i++){
+            index = foodList[i].indexOf(area) !== -1?i:index;
+        }
+        if(index === -1){
+            alert("해당하는 음식점이 없습니다.")
+        }else{
+            alert("추천 음식점은 :" + foodList[index].split(":")[1])
+        }
+        
+        
+    </script>
+</body>
+</html>

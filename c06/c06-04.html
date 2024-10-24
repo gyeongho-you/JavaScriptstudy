@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체와 배열 고급
+        //속성 존재 여부 확인
+        //객체에 없는 속성에 접근 하려면 undefined자료형이 나옴
+        //따라서 조건문으로 undefined인지 아닌지 확인하면 속성 존재여부 확인 가능
+
+        const object = {
+            name : "채식주의자",
+            price : 9450,
+            publisher : "한빛미디어"
+        }
+        if(object.name != undefined){
+            console.log("name 속성이 있습니다.");
+        } else{
+            console.log("name 속성이 없습니다.");
+        }
+        if(object.author != undefined){
+            console.log("author 속성이 있습니다.");
+        } else{
+            console.log("author 속성이 없습니다.");
+        }
+        //개발자들은 일반적으로 더 간단하게 검사하려고 줄여 씁니다.
+        if(object.name){
+            console.log("name 속성이 있습니다.");
+        } else{
+            console.log("name 속성이 없습니다.");
+        }
+        if(object.author){
+            console.log("author 속성이 있습니다.");
+        } else{
+            console.log("author 속성이 없습니다.");
+        }
+        //짧은 조건문
+        object.name || console.log("name 속성이 없습니다.");
+        object.author || console.log("author 속성이 없습니다.");
+        
+        //객체의 속성 지정하기
+        object.name = object.name!==undefined ? object.name : "제목 미정"
+        object.author = object.author!==undefined ? object.author : "저자 미정"
+        console.log(object);
+        
+        //기본 속성 지정할 때 쓰는 코드
+        object.name = object.name||"제목 미정"
+        object.author = object.author||"저자 미정"
+
+        //배열 기반의 다중 할당
+        // 한 번에 여러 개의 변수에 값을 할당하는 다중 할당 기능이 추가 되었습니다.
+        //[식별자,식별자,식별자,...] = 배열
+        const arr = [1,2,3]
+        let n1 = arr[0]
+        let n2 = arr[1]
+        let n3 = arr[2]
+        console.log(n1,n2,n3);
+        let [a,b,c] = arr;
+        console.log(a,b,c);
+        
+        //서로 값을 교환할때도 사용 된다
+        [a,b,c] = [c,b,a]
+        console.log(a,b,c);
+        
+        //다중할당에서 배열보다 자동할당의 변수가 더 적을 때 앞에서 부터 할당됨
+        let arrayA=[1,2,3,4,5]
+        const [x,y,z] = arrayA
+        console.log(x,y,z); // 1,2,3    
+        
+        //객체 기반의 다중 할당
+        //{속성 이름, 속성 이름} = 객체
+        //{식별자=속성 이름,식별자=속성 이름} = 객체
+        const obj ={
+            name:"채식주의자",
+            price:"10000",
+            publisher:"창비"
+        }
+
+        const {name,price} = obj
+        console.log("# 속성 이름 그대로 꺼내서 출력하기");
+        console.log(name,price);
+        console.log("");
+        
+        const {pro1 = name, pro2 = price} = object
+        console.log("# 다른 이름으로 속성 꺼내서 출력하기");
+        console.log(pro1,pro2);
+        console.log("");
+        
+        
+        //배열 전개 연산자
+        //배열과 객체는 할당할 때 얕은 복사라는 것이 이루어진다.
+        //배열을 복사해도 다른 이름을 붙일 뿐입니다.
+        const p1 =["우유","식빵"]
+        const p2 = p1
+        p2.push("고구마")
+        console.log(p1);
+        console.log(p2);
+        //깊은 복사
+        const p3 = ["우유","식빵"]
+        const p4 = [...p3]
+        p3.push("고구마")
+        console.log(p3);
+        console.log(p4);
+
+        //다른 2개 이상의 배열을 붙일 때도 활용
+        const p6 = ["우유","식빵"]
+        const p7 = ["고구마","토마토"]
+        const p8 = [...p6,...p7]
+        const p9 = [...p7,...p6]
+        
+        const cloud = {
+            name:"구름",
+            age:6,
+            kind:"강아지"
+        }
+        const star={...cloud}
+
+
+        const start1={
+            ...cloud,
+            name:"aa",
+            vaccin:true
+        }
+    </script>
+</body>
+</html>
