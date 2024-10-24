@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //예외 처리 고급
+        //try catch 에 catch 안에 입력하는 식별자가 예외 객체
+        // 아무 식별자나 입력해도 괜찮지만, 일반적으로 e나 exception을 사용
+        // 예외 객체가 갖고 있는 속성은 브라우저에 따라 조금씩 다름
+        //모든 웹 브라우저가 공통적으로 갖고 있는 속성정리
+
+        try{
+            const array = new Array(99999999999999999999999)
+        }catch(exception){
+            console.log(exception);
+            console.log();
+            console.log(`예외 이름 : ${exception.name}`);
+            console.log(`예외 메세지 : ${exception.message}`);
+        }
+
+        // throw "문자열"
+        // throw new Error("문자열")
+        // 2가지 예외 발생이 출력이 약간 다릅니다.\
+
+        function divide(a,b){
+            if(b===0){
+                throw "0으로는 나눌 수 없습니다."
+            }
+            return a/b;
+        }
+
+        // console.log(divide(10,2));
+        // console.log(divide(10,0));
+
+        function test(object){
+            if(object.a !== undefined && object.b !== undefined){
+                console.log(object.a + object.b);        
+            }else{
+                throw new Error("a 속성과 b속성을 지정하지 않습니다.")
+            }
+        }   
+
+        try{
+            test({})
+        }catch(e){
+            console.log(e);
+        }
+
+        console.log("end");
+        
+        // 일반적인 프로그래밍 언어라면 object에 a와 b 없음 - 예외발생
+        // 두 개를 더할때도 발생
+        // 이떄 오류발생으로 인해 사용자가 자신이 잘못 사용했다는거 인지 후 수정 가능
+        // 하지만, 자바스크립트
+        // obj.a 가 undefined -> b도 undefined
+        // 여기서 두 undefined를 더하면 NaN이 나옴
+        // 즉 자바스크립트에서는 아무 오류없이 코드가정상적 실행
+        // 이처럼 자바 스크립트는 undefined와 NaN란 값 존재
+        // 다른 언어에 비해 예외발생이 적음
+        // 사용자에게 함수 잘못 사용했다는것 강제라도 인지시켜줄 필요 있음
+        
+    </script>
+</body>
+</html>
