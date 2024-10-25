@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class recommendFoods {
+            #areaName
+            #food
+            constructor(areaName){
+                this.areaName = areaName
+                this.#food = []
+            }
+
+            get areaName(){
+                return this.#areaName
+            }
+
+            set areaName(areaName){
+                this.#areaName = areaName
+            }
+
+            get food(){
+                return this.#food
+            }
+
+            addFood(food){
+                this.#food.push(food)
+            }
+
+            updateFood(index, food){
+                this.#food[index] = food
+            }
+
+            deleteFood(index){
+                this.#food.splice(index)
+            }
+        }
+
+        let area = "" // 맛집 장소
+        let run = true
+
+        const foodList = []
+        while(run){
+            switch(prompt("1.맛집 등록   2.맛집 확인   3.맛집 수정   4.맛집 삭제   5.종료")){
+                case "1":
+                    area = prompt("지역을 입력해 주세요( OO시 )")
+                    let check = false
+                    for(const item of foodList){
+                        //만약 이미 등록된 지역이면 맛집만 등록
+                        if(item.areaName === area){
+                            item.addFood(prompt("맛집 이름을 입력해 주세요"))
+                            alert("등록 완료")
+                            check = true
+                            break;
+                        }
+                    }
+
+                    if(!check){
+                        foodList.push(new recommendFoods(area))
+                        foodList[foodList.length-1].addFood(prompt("맛집 이름을 입력해 주세요"))
+                        alert("등록 완료")
+                    }
+                    break;
+
+                case "2":
+                    let output0 = "지역 리스트 입니다.\n"
+                    let cnt0 = 1
+                    for(const areaView of foodList){
+                        output0 += `${cnt0++}. ${areaView.areaName} \n`
+                    }
+
+                    area = prompt(`지역을 입력해 주세요( OO시 ) \n ${output0}`)
+                    let output = "맛집 리스트 입니다.\n"
+                    for(const item of foodList){
+                        //만약 이미 등록된 지역이면 맛집만 등록
+                        if(item.areaName === area){
+                            let cnt = 1;
+                            for(const food of item.food){
+                                output += `${cnt++}. ${food} \n`
+                            }
+                            break;
+                        }
+                    }
+                    alert(output)
+                    break;
+
+                case "3":
+                    let output1 = "지역 리스트 입니다.\n"
+                    let cnt1 = 1
+                    for(const areaView of foodList){
+                        output1 += `${cnt1++}. ${areaView.areaName} \n`
+                    }
+                    area = prompt(`지역을 입력해 주세요( OO시 ) \n ${output1}`)
+                    let checkUp = false
+                    let checkfood = false
+                    for(const item of foodList){
+                        if(item.areaName === area){
+                            checkUp = true
+                            
+                            let outfood = "맛집 리스트 입니다.\n"
+                            for(const food of item.food){
+                                outfood += `${food} \n`
+                            }
+                            const change = prompt(`바꿀 음식점을 입력해 주세요 \n ${outfood}`)
+                            let cntUp = 0;
+                            for(const food of item.food){
+                                if(food === change){
+                                    item.updateFood(cntUp, prompt(`바뀔 이름을 입력해 주세요`))
+                                    alert("변경되었습니다.")
+                                    checkfood = true
+                                }
+                                cntUp++
+                            }
+                        }
+                    }
+                    if(!checkUp){
+                        alert("없는 지역입니다.")
+                        break;
+                    }
+                    if(!checkfood){
+                        alert("없는 식당 입니다.")
+                        break;
+                    }
+                    break;
+
+                case "4":
+                let output2 = "맛집 리스트 입니다.\n"
+                    let cnt2 = 1
+                    for(const areaView of foodList){
+                        output2 += `${cnt2++}. ${areaView.areaName} \n`
+                    }
+                    area = prompt(`지역을 입력해 주세요( OO시 ) \n ${output2}`)
+                    let checkDel = false
+                    let checkFoodDel = false
+                    let cntindex = 0;
+                    for(const item of foodList){
+                        if(item.areaName === area){
+                            checkDel = true
+                            
+                            let outfood1 = "맛집 리스트 입니다.\n"
+                            for(const food of item.food){
+                                outfood1 += `${food} \n`
+                            }
+                            const deleteFood = prompt(`삭제할 음식점을 입력해 주세요 ${outfood1}`)
+                            let cntDel = 0;
+                            for(const food of item.food){
+                                if(food === deleteFood){
+                                    item.deleteFood(cntDel)
+                                    alert("삭제되었습니다.")
+                                    checkFoodDel = true
+                                    break;l
+                                }
+                                cntDel++
+                            }
+                            break;
+                        }
+                        cntindex++;
+                    }
+                    if(foodList[cntindex].length === 0){
+                        foodList.slice(cntindex)
+                    }
+                    if(!checkDel){
+                        alert("없는 지역입니다.")
+                        break;
+                    }
+                    if(!checkFoodDel){
+                        alert("없는 식당 입니다.")
+                        break;
+                    }
+
+                    break;
+
+                case "5":
+                    alert("종료합니다.")
+                    run = false
+                    break;
+
+                default:
+                alert("잘못된 입력입니다.")
+            }
+        }
+    </script>
+</body>
+</html>
